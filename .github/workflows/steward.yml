@@ -23,7 +23,7 @@ jobs:
         uses: scala-steward-org/scala-steward-action@v2
         with:
           github-token: ${{ steps.generate-token.outputs.token }}
-          author-email: 206853+nimble-agar-steward[bot]@users.noreply.github.com
+          author-email: 106723251+nimble-agar-steward[bot]@users.noreply.github.com
           author-name: nimble-agar-steward[bot]
           github-app-id: 206853
           github-app-key: ${{ secrets.NIMBLE_AGAR_STEWARD_PRIVATE_KEY }}
