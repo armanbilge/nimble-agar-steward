@@ -31,7 +31,7 @@ jobs:
           private_key: ${{ secrets.NIMBLE_AGAR_STEWARD_PRIVATE_KEY }}
 
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@11398e8bc72b1c40cb4a00bf0353d8b03e049919
+        uses: DeterminateSystems/update-flake-lock@36f1c474807d62363305dcec6fd9ea9ed642c114
         with:
           token: ${{ steps.generate-token.outputs.token }}
           branch: update/flake-lock-${{ github.run_number }}
