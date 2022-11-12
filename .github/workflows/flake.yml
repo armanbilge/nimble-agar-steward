@@ -37,6 +37,8 @@ jobs:
           branch: update/flake-lock-${{ github.run_number }}
           git-author-email: 106723251+nimble-agar-steward[bot]@users.noreply.github.com
           git-author-name: nimble-agar-steward[bot]
+          git-committer-email: 106723251+nimble-agar-steward[bot]@users.noreply.github.com
+          git-committer-name: nimble-agar-steward[bot]
           pr-body: |
             Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
 
