@@ -1,0 +1,37 @@
+name: Nimble Agar Flake Steward
+
+on:
+  schedule:
+    - cron: '45 7 * * 2'
+  workflow_dispatch:
+
+jobs:
+  lockfile:
+    strategy:
+      matrix:
+        repo:
+          - armanbilge/fs2-dom
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{ matrix.repo }}
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v17
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: 206853
+          private_key: ${{ secrets.NIMBLE_AGAR_STEWARD_PRIVATE_KEY }}
+
+      - name: Update flake.lock
+        uses: DeterminateSystems/update-flake-lock@v14
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          branch: update/flake-lock-${{ github.run_number }}
