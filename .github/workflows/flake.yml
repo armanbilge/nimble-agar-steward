@@ -33,7 +33,7 @@ jobs:
           private_key: ${{ secrets.NIMBLE_AGAR_STEWARD_PRIVATE_KEY }}
 
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v15
+        uses: DeterminateSystems/update-flake-lock@v16
         with:
           token: ${{ steps.generate-token.outputs.token }}
           branch: update/flake-lock
