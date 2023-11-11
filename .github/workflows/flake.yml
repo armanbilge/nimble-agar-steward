@@ -12,8 +12,6 @@ jobs:
         repo:
           - armanbilge/fs2-dom
           - armanbilge/porcupine
-          - armanbilge/sadalsuud
-          - armanbilge/schrodinger
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
